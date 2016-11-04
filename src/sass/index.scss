@@ -1,0 +1,83 @@
+/*元となる色を指定*/
+$base-color: #536A97;
+// #menu{
+// 	position:fixed;
+// 	z-index: 9999;
+// }
+@mixin fixcenter($width,$flexWrap){
+	width:$width;
+	display:flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	flex-wrap: $flexWrap;
+}
+@for $i from 1 through 6{
+	#section#{$i}{
+		color:white;
+		background-color: lighten($base-color, 5%*$i);
+		.context{
+			@include fixcenter(100%,wrap);
+		}
+		.main-center{
+			text-align: center;
+			h1{
+				padding-top:10px;
+				padding-bottom:10px;
+			}
+		}
+		.main-left{
+			text-align: left;
+		}
+		@if $i==1{
+			background-color:#285a73;
+			img{
+				width:100%;
+				height:initial;
+				 max-height: 60%;
+			}
+		}@else if $i==2{
+			background-size:cover;
+			background-image:url(../img/bg_all2.jpg);
+		}@else if $i==3{
+			.ex-box{
+				@include fixcenter(30%,nowrap);
+				.discri{
+					margin: 10px;
+					img{
+						width:100%;
+					}
+				}
+			}
+		}@else if $i==4{
+			.main-center{
+				text-align: center;
+				h1{
+					margin-top:25px;
+					margin-bottom:25px;
+				}
+			}
+			.q-box{
+				//上下、左右
+				width:80%;
+				margin-left: 5%;
+				h3{
+					margin-top: 5px;
+					margin-bottom:5px;
+				}
+				.discri{
+					margin-left:50px;
+				}
+			}
+		}@else if $i==6{
+			$list: iframe,object,embed;
+			@each $s in $list{
+				.#{$s}{
+					// // position: absolute;
+					// top: 0;
+					// left: 0;
+					width:100%;
+				}
+			}
+		}
+	}
+}
