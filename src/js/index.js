@@ -1,7 +1,7 @@
 $(function(){
 	$("#pagepiling").pagepiling({
 		menu: '#menu',
-		anchors:["page1","page2","page3","page4","page5"],
+		anchors:["page1","page2","page3","page4"],
 		navigation:{
 			"position":"right",
 			"tooltips":["TOP","What's ミミトンネル","実験内容","仕組み","受賞","コンタクト"]

@@ -20,7 +20,7 @@ $base-color: #536A97;
 		text-shadow: black 1px 1px 0px, black -1px 1px 0px,black 1px -1px 0px, black -1px -1px 0px;
 		background-color: lighten($base-color, 5%*$i);
 		h1 {
-			font-size: 300%;
+			font-size: 250%;
 		}
 		.context{
 			@include fixcenter(100%,wrap);
@@ -49,17 +49,16 @@ $base-color: #536A97;
 		}@else if $i==2{
 			background-size:cover;
 			background-image:url(../img/bg_all2.jpg);
-		}@else if $i==3{
 			.ex-box{
 				@include fixcenter(30%,nowrap);
 				.discri{
 					margin: 10px;
 					img{
-						width:100%;
+						width:50%;
 					}
 				}
 			}
-		}@else if $i==5{
+		}@else if $i==4{
 			$list: iframe,object,embed;
 			@each $s in $list{
 				.#{$s}{
