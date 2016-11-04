@@ -1,9 +1,12 @@
 /*元となる色を指定*/
 $base-color: #536A97;
-// #menu{
-// 	position:fixed;
-// 	z-index: 9999;
-// }
+#menu{
+	position:fixed;
+	z-index: 9999;
+	li{
+		display: inline-block;
+	}
+}
 @mixin fixcenter($width,$flexWrap){
 	width:$width;
 	display:flex;
@@ -30,11 +33,15 @@ $base-color: #536A97;
 		}
 		@if $i==1{
 			background-color:#285a73;
-			img{
-				width:100%;
-				height:initial;
-				 max-height: 60%;
-			}
+			// img{
+			// 	width:100%;
+			// 	height:initial;
+			// 	 max-height: 60%;
+			// }
+
+			background-size:cover;
+			background-image:url(../img/bg.jpg);
+			background-position:0% 50%;
 		}@else if $i==2{
 			background-size:cover;
 			background-image:url(../img/bg_all2.jpg);
@@ -77,6 +84,9 @@ $base-color: #536A97;
 					// left: 0;
 					width:100%;
 				}
+			}
+			li{
+				display: inline-block;
 			}
 		}
 	}
